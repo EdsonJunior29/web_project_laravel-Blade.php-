@@ -6,6 +6,6 @@ class ContatoController extends Controller
 {
     public function index()
     {
-        echo 'CONTATO';
+        return view('site.contato');
     }
 }

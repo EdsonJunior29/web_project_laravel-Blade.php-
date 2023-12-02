@@ -6,6 +6,6 @@ class SobreNosController extends Controller
 {
     public function index()
     {
-        echo 'SOBRE-NÓS';
+        return view('site.sobrenos');
     }
 }

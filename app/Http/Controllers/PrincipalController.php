@@ -6,6 +6,6 @@ class PrincipalController extends Controller
 {
     public function index()
     {
-        echo 'controller principal';
+        return view('site.principal');
     }
 }
