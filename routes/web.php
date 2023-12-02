@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\SobreNosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[PrincipalController::class , 'index']);
 
-Route::get('/sobre-nos', function () {
-    return 'SOBRE-NOS';
-});
+Route::get('/sobre-nos',[SobreNosController::class, 'index' ]);
 
-Route::get('/contato', function () {
-    return 'CONTATO';
-});
+Route::get('/contato',[ContatoController::class, 'index']);
