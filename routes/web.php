@@ -21,3 +21,15 @@ Route::get('/',[PrincipalController::class , 'index']);
 Route::get('/sobre-nos',[SobreNosController::class, 'index' ]);
 
 Route::get('/contato',[ContatoController::class, 'index']);
+
+//Recebendo parâmentros na rota
+Route::get('/contato/{name}', function(string $name){
+    return "My name is: " . $name;
+});
+
+// Deixar o parâmetros opcional
+Route::get('/contato/{name}/{age?}', function(string $name, int $age = 34){
+    return "My name is: " . $name. '- i have: '.$age. ' year old' ;
+});
+
+
