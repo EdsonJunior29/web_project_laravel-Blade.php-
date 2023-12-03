@@ -28,8 +28,19 @@ Route::get('/contato/{name}', function(string $name){
 });
 
 // Deixar o parâmetros opcional
-Route::get('/contato/{name}/{age?}', function(string $name, int $age = 34){
+Route::get('/contato/{name}/{age?}/{category}', function(string $name, int $age = 34){
     return "My name is: " . $name. '- i have: '.$age. ' year old' ;
 });
+
+
+// validar o parâmetros co expressões regulares
+Route::get('/contato/{name}/{category_id}',
+ function(
+    string $name,
+    int $category_id = 1) {
+    return "Etamos aqui : ".$name." - ".$category_id;
+})
+->where('name', '[A-Za-z]+')
+->where('category_id', '[0-9]+');
 
 
