@@ -6,6 +6,6 @@ class ContatoController extends Controller
 {
     public function index()
     {
-        return view('site.contato');
+        return redirect('/sobre-nos');
     }
 }

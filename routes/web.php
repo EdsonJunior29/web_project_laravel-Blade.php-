@@ -25,5 +25,10 @@ Route::prefix('/app')->group( function (){
     Route::get('/clientes',function(){return 'clientes';});
     Route::get('/fornecedores',function(){return 'fornecedores';});
     Route::get('/produtos',function(){return 'produtos';});
-
 });
+
+Route::get('/route1', function(){
+    echo 'rota 2';
+});
+
+Route::redirect('/route1', '/contato');
