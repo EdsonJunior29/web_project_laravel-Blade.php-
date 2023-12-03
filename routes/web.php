@@ -17,30 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[PrincipalController::class , 'index']);
-
 Route::get('/sobre-nos',[SobreNosController::class, 'index' ]);
-
 Route::get('/contato',[ContatoController::class, 'index']);
+Route::get('/login', function(){return 'login';});
 
-//Recebendo parâmentros na rota
-Route::get('/contato/{name}', function(string $name){
-    return "My name is: " . $name;
+Route::prefix('/app')->group( function (){
+    Route::get('/clientes',function(){return 'clientes';});
+    Route::get('/fornecedores',function(){return 'fornecedores';});
+    Route::get('/produtos',function(){return 'produtos';});
+
 });
-
-// Deixar o parâmetros opcional
-Route::get('/contato/{name}/{age?}/{category}', function(string $name, int $age = 34){
-    return "My name is: " . $name. '- i have: '.$age. ' year old' ;
-});
-
-
-// validar o parâmetros co expressões regulares
-Route::get('/contato/{name}/{category_id}',
- function(
-    string $name,
-    int $category_id = 1) {
-    return "Etamos aqui : ".$name." - ".$category_id;
-})
-->where('name', '[A-Za-z]+')
-->where('category_id', '[0-9]+');
-
-
