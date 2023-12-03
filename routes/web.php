@@ -27,8 +27,7 @@ Route::prefix('/app')->group( function (){
     Route::get('/produtos',function(){return 'produtos';});
 });
 
-Route::get('/route1', function(){
-    echo 'rota 2';
+Route::fallback(function(){
+    echo 'Erro ao acessar a rota. 
+        <a href="/">click aqui</a> para voltar a página inicial';
 });
-
-Route::redirect('/route1', '/contato');
