@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use Illuminate\Support\Facades\Route;
@@ -23,11 +24,9 @@ Route::get('/login', function(){return 'login';});
 
 Route::prefix('/app')->group( function (){
     Route::get('/clientes',function(){return 'clientes';});
-    Route::get('/fornecedores',function(){return 'fornecedores';});
+    Route::get('/fornecedores',[FornecedorController::class, 'index']);
     Route::get('/produtos',function(){return 'produtos';});
 });
-
-Route::get('/teste/{p1}/{p2}', [ContatoController::class, 'teste']);
 
 Route::fallback(function(){
     echo 'Erro ao acessar a rota. 
