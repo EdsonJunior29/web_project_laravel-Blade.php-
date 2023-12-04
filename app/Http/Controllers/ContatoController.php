@@ -8,4 +8,9 @@ class ContatoController extends Controller
     {
         return view('site.contato');
     }
+
+    public function teste(int $p1, int $p2)
+    {
+        return $p1 + $p2;
+    }
 }

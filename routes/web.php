@@ -27,6 +27,8 @@ Route::prefix('/app')->group( function (){
     Route::get('/produtos',function(){return 'produtos';});
 });
 
+Route::get('/teste/{p1}/{p2}', [ContatoController::class, 'teste']);
+
 Route::fallback(function(){
     echo 'Erro ao acessar a rota. 
         <a href="/">click aqui</a> para voltar a página inicial';
