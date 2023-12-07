@@ -10,6 +10,7 @@ class FornecedorController extends Controller
     {
         $fornecedores = ['Fornecedor 1'];
         $clientes = 10;
+        $cliente2 = 0;
         $material = [
             0 => [
                 'name' => 'Caderno',
@@ -19,6 +20,7 @@ class FornecedorController extends Controller
         return view('app.fornecedor.index',
              compact(
                 'clientes',
+                'cliente2',
                 'fornecedores',
                 'material'
             ));

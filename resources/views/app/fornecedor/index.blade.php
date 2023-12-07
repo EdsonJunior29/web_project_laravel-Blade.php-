@@ -29,5 +29,19 @@
     $edson.
 @endisset
 
-@dd($material)
+<br>
+
+@empty($cliente2)
+<!-- Para o PHP as variável são consideraveis vazias quando:
+    string vazia ex: $a = '';
+    Int com o valor 0 ex: $b = 0;
+    Float com valor 0.0 ex: $c = 0.0;
+    string com caractere 0 ex: $d = '0';
+    valores null ex: $e = null;
+    valores false ex: $f = false;
+    array vazio ex: $g = []; ou $g = array();
+    variavel sem valores ex: var $h; 
+-->
+    Variável está vazia......
+@endempty
 
