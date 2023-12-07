@@ -12,7 +12,7 @@
     <h3>Temos mais de 10 fornecedores</h3>
 @endif
 
-<!-- execulta se o retorno for true(nesse caso não vai entrar no if) --> 
+<!-- execulta o código se o retorno for true(nesse caso não vai entrar no if) --> 
 @if ($material[0]['compraStatus'] == 'R')
     Compra aprovada com sucesso!!!   
 @endif
@@ -22,6 +22,12 @@
 @unless($material[0]['compraStatus'] == 'R')
     Compra não aprovada! Favor verificar a forma de pagamento.  
 @endunless
+
+<!-- Verifica se a variável ou array foi definido. (Retorna True ou false)-->
+@isset($edson)
+    Esse bloco não será executado. Pois, na view mão está definida a variável
+    $edson.
+@endisset
 
 @dd($material)
 
