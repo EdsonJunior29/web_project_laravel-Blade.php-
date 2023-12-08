@@ -88,3 +88,15 @@
         $i++  
     @endphp
 @endwhile
+
+<br>
+<hr>
+
+@foreach ($material as $indice => $fornecedor)
+    Name : {{ $fornecedor['name'] }}  
+    <br>
+    CompraStatus : {{ $fornecedor['compraStatus']  }}
+    <br>
+    DDD : {{ $fornecedor['DDD'] }}
+
+@endforeach
