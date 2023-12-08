@@ -16,7 +16,17 @@ class FornecedorController extends Controller
                 'name' => 'Caderno',
                 'compraStatus' => 'A',
                 'DDD' => '21'
-                ]
+            ],
+            1 => [
+                'name' => 'Computador',
+                'compraStatus' => 'R',
+                'DDD' => '11'
+            ],
+            2 => [
+                'name' => 'Mouse',
+                'compraStatus' => 'A',
+                'DDD' => '31'
+            ]
         ];
         return view('app.fornecedor.index',
              compact(

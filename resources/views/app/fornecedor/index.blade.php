@@ -100,3 +100,19 @@
     DDD : {{ $fornecedor['DDD'] }}
 
 @endforeach
+
+<br>
+<hr>
+@foreach ($material as $indice => $fornecedor)
+    @switch($fornecedor['DDD'])
+        @case('11')
+            São Paulo
+            @break
+        @case('21')
+            Rio de Janeiro
+            @break
+        @default
+            Outros estados
+    @endswitch
+    <br>
+@endforeach
