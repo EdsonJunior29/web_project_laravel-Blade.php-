@@ -44,4 +44,8 @@
 -->
     Variável está vazia......
 @endempty
+<br>
+@isset($material)
+    {{ $material[0]['preco'] ?? 'Não existe dados nesse campo'}}
+@endisset
 
