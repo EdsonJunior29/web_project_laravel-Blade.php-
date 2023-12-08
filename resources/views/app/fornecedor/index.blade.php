@@ -72,4 +72,19 @@
     DDD : {{ $material[$i]['DDD'] }}
 @endfor
 <hr>
+<br>
 
+@php
+    $i = 0  
+@endphp 
+@while(isset($material[$i]))
+    
+    Name : {{ $material[$i]['name'] }}
+    <br>
+    CompraStatus : {{ $material[$i]['compraStatus']  }}
+    <br>
+    DDD : {{ $material[$i]['DDD'] }}
+    @php
+        $i++  
+    @endphp
+@endwhile
