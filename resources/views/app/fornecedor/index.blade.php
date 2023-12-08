@@ -62,3 +62,14 @@
         Outros estados
 @endswitch
 
+<br>
+<hr>
+@for ($i = 0; isset($material[$i]); $i++ )
+    Name : {{ $material[$i]['name'] }}
+    <br>
+    CompraStatus : {{ $material[$i]['compraStatus']  }}
+    <br>
+    DDD : {{ $material[$i]['DDD'] }}
+@endfor
+<hr>
+
