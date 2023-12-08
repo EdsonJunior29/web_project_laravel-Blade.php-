@@ -14,7 +14,8 @@ class FornecedorController extends Controller
         $material = [
             0 => [
                 'name' => 'Caderno',
-                'compraStatus' => 'A'
+                'compraStatus' => 'A',
+                'DDD' => '21'
                 ]
         ];
         return view('app.fornecedor.index',

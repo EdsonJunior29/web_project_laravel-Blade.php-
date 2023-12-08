@@ -49,3 +49,16 @@
     {{ $material[0]['preco'] ?? 'Não existe dados nesse campo'}}
 @endisset
 
+<br>
+
+@switch($material[0]['DDD'])
+    @case('11')
+        São Paulo
+        @break
+    @case('21')
+        Rio de Janeiro
+        @break
+    @default
+        Outros estados
+@endswitch
+
