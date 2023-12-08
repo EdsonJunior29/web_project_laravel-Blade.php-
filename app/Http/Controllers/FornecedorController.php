@@ -28,12 +28,15 @@ class FornecedorController extends Controller
                 'DDD' => '31'
             ]
         ];
+
+        $alunos = [];
         return view('app.fornecedor.index',
              compact(
                 'clientes',
                 'cliente2',
                 'fornecedores',
-                'material'
+                'material',
+                'alunos'
             ));
     }
 }

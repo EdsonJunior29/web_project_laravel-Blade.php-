@@ -116,3 +116,26 @@
     @endswitch
     <br>
 @endforeach
+
+<br>
+<hr>
+
+@forelse ($material as  $indice => $fornecedor)
+    Name : {{ $fornecedor['name'] }}  
+    <br>
+    CompraStatus : {{ $fornecedor['compraStatus']  }}
+    <br>
+    DDD : {{ $fornecedor['DDD'] }}
+@empty
+    Array está vazio......
+@endforelse
+
+<br>
+<hr>
+
+@forelse ($alunos as  $indice => $aluno)
+    Name : {{ $aluno['name'] }}  
+    <br>
+@empty
+    Array está vazio......
+@endforelse
