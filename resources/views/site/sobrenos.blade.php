@@ -207,8 +207,7 @@
 
             <div class="menu">
                 <ul>
-                <a href="">Sobre-nós</a></li>
-                    <li><a href="/principal">Principal</a></li>
+                    <li><a href="/">Principal</a></li>
                     <li><a href="/sobre-nos">Sobre Nós</a></li>
                     <li><a href="/contato">Contato</a></li>
                 </ul>
