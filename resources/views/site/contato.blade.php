@@ -9,7 +9,8 @@
     </div>
     <div class="informacao-pagina">
         <div class="contato-principal">
-            <form action="contato" method="GET">
+            <form action="contato" method="POST">
+                @csrf
                 <input name="name" type="text" placeholder="Nome" class="borda-preta">
                 <br>
                 <input name="phone" type="text" placeholder="Telefone" class="borda-preta">
