@@ -6,6 +6,6 @@ class SobreNosController extends Controller
 {
     public function index()
     {
-        return view('site.sobrenos');
+        return view('site.sobrenos', ['title' => 'Sobre-nós(controller)']);
     }
 }

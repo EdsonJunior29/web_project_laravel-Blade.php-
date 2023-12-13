@@ -1,5 +1,9 @@
 @extends('site.layouts.index')
 
+
+@section('title', $title)
+
+@section('conteudo')
 <div class="topo">
     <div class="logo">
         <img src="{{ asset('img/logo.png') }}">
@@ -41,4 +45,5 @@
         <img src="{{ asset('img/mapa.png') }}">
     </div>
 </div>
+@endsection
    
