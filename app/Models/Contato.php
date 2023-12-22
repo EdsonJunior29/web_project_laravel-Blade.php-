@@ -15,7 +15,7 @@ class Contato extends Model
         'name',
         'phone',
         'email',
-        'reason_contact',
+        'contact',
         'message'
     ];
 }
