@@ -21,7 +21,7 @@ Route::get('/',[PrincipalController::class , 'index']);
 Route::post('/',[PrincipalController::class , 'index']);
 Route::get('/sobre-nos',[SobreNosController::class, 'index' ]);
 Route::get('/contato',[ContatoController::class, 'index']);
-Route::post('/contato',[ContatoController::class, 'index']);
+Route::post('/contato',[ContatoController::class, 'store']);
 Route::get('/login', function(){return 'login';});
 
 Route::prefix('/app')->group( function (){
