@@ -19,3 +19,11 @@
     <br>
     <button type="submit" class="borda-preta">ENVIAR</button>
 </form>
+
+<!-- Auxiliar no debug do lado do front-end -->
+<!-- Variável errors pode ser utilizada de forma automática pelo Laravel Blade (Por padrão)-->
+<div style="position: absolute; top: 0px; left: opx; width: 100%; background-color: red;">
+    <pre>
+        {{ print_r($errors) }}
+    </pre>
+</div>
