@@ -15,23 +15,26 @@ class ContatoController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $regras = [
             'name' => 'required|min:3|max:50',
             'phone' => 'required|min:9|max:30',
             'email' => 'required|min:3|max:50|email',
             'contact' => 'required|integer',
             'message' => 'required|string'
-        ],
-        [
+        ];
+
+        $feedbacks = [
             'name.min' => 'O campo nome não pode conter menos de 3 caracteres.',
             'name.min' => 'O campo nome não pode conter mais de 50 caracteres.',
 
             //Podemos realizar isso em todos os campos do método validate acima.....
 
             //inclindo apenas a validação e utilizando em todos os campos
-            'required' => 'O campo não pode ser vazio.',
-        ]
-    );
+            // quando utilizamos o :attribute ele e substituído pelo campo que está passando pela validação
+            'required' => 'O campo :attribute não pode ser vazio.',
+        ];
+
+        $request->validate($regras, $feedbacks);
 
         $contact = new ContatoService();
 
