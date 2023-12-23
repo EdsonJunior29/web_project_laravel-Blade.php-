@@ -21,7 +21,17 @@ class ContatoController extends Controller
             'email' => 'required|min:3|max:50|email',
             'contact' => 'required|integer',
             'message' => 'required|string'
-        ]);
+        ],
+        [
+            'name.required' => 'O camp nome não pode ser vazio.',
+            'name.min' => 'O campo nome não pode conter menos de 3 caracteres.',
+            'name.min' => 'O campo nome não pode conter mais de 50 caracteres.',
+
+            'phone.required' => 'O campo phone não pode ser vazio.',
+
+            //Podemos realizar isso em todos os campos do método validate acima.....
+        ]
+    );
 
         $contact = new ContatoService();
 
