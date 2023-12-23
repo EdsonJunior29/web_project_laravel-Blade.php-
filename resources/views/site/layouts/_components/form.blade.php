@@ -28,10 +28,14 @@
 
 <!-- Auxiliar no debug do lado do front-end -->
 <!-- Variável errors pode ser utilizada de forma automática pelo Laravel Blade (Por padrão)-->
-<!--
-<div style="position: absolute; top: 0px; left: opx; width: 100%; background-color: red;">
-    <pre>
-        {{ print_r($errors) }}
-    </pre>
-</div>
--->
+<!-- Será apresenta se houver algum erro. Para isso estou utilizando o método any()-->
+@if ($errors->any())
+    <div style="position: absolute; top: 0px; left: opx; width: 100%; background-color: red;">
+        @foreach ( $errors->all() as $error )
+            {{ $error }}
+            <br>
+        @endforeach
+    </div>
+@endif
+
+
