@@ -9,17 +9,18 @@ class ContatoService
 {
     protected $contact;
 
-    public function __construct() {
-        $this->contact = new ContatoRepository();
+    public function __construct(ContatoRepository $repository) {
+        $this->contact = $repository;
     }
 
-    public function saveContact(string $name, string $phone, string $email, int $contact_type, string $message)
+    public function saveContact(string $name, string $phone, string $email, int $contact_type, string $message) : bool
     {
         try {
-            $this->contact->save($name, $phone, $email, $contact_type, $message);
+           $saved =  $this->contact->save($name, $phone, $email, $contact_type, $message);
         } catch (\Throwable $th) {
-            throw new ContatoException('Erro saved contact', 500);
+            throw new ContatoException($th->getMessage(), 500);
         }
-        
+
+        return $saved;
     }
 }

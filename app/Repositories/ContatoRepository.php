@@ -14,7 +14,7 @@ class ContatoRepository implements ContatoInterface
         $this->contact = new Contato();
     }
 
-    public function save(string $name, string $phone, string $email, int $contact_type, string $message)
+    public function save(string $name, string $phone, string $email, int $contact_type, string $message) : bool
     {
         $this->contact->fill([
             'name' => $name,
@@ -24,6 +24,6 @@ class ContatoRepository implements ContatoInterface
             'message' => $message
         ]);
 
-        $this->contact->save();
+        return $this->contact->save();
     }
 }
