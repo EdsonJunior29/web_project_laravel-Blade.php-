@@ -4,6 +4,7 @@ use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
+use App\Http\Middleware\LogAcessMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[PrincipalController::class , 'index']);
-Route::post('/',[PrincipalController::class , 'index']);
+Route::get('/',[PrincipalController::class , 'index'])
+    ->middleware(LogAcessMiddleware::class);
+
+Route::middleware(LogAcessMiddleware::class)
+    ->post('/',[PrincipalController::class , 'index']);
+    
 Route::get('/sobre-nos',[SobreNosController::class, 'index' ]);
 Route::get('/contato',[ContatoController::class, 'index']);
 Route::post('/contato',[ContatoController::class, 'store']);
