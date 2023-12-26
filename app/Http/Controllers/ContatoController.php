@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Exceptions\ContatoException;
+use App\Http\Middleware\LogAcessMiddleware;
 use App\Services\ContatoService;
 use Illuminate\Http\Request;
 
 class ContatoController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware(LogAcessMiddleware::class);
+    }
+
     public function index()
     { 
         return view('site.contato');
