@@ -21,6 +21,12 @@ class LogAcessMiddleware
         $route = $request->getRequestUri();
         LogAcesso::create(['log' => "IP $ip Acessou a rota $route"]);
 
-        return $next($request);
+        //Capturando a resposta após o processamento da controller
+        $res = $next($request);
+
+        //Modificando o status code e o status text(exemplo)
+        $res->setStatusCode(200, 'created');
+
+        return $res;
     }
 }
