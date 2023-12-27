@@ -27,7 +27,9 @@ Route::post('/contato',[ContatoController::class, 'store']);
 Route::get('/login', function(){return 'login';});
 
 Route::prefix('/app')->group( function (){
-    Route::get('/clientes',function(){return 'clientes';});
+    Route::get('/clientes',function(){return 'clientes';})
+        ->middleware('log.acess','autenticacao');
+        
     Route::get('/fornecedores',[FornecedorController::class, 'index']);
     Route::get('/produtos',function(){return 'produtos';});
 });
