@@ -13,6 +13,20 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
+        $regras = [
+            'email' => 'email',
+            'senha' => 'required'
+        ];
+
+        $feedback = [
+            'email.email' => 'O campo email é obrigatório',
+            'senha.required' => 'A senha é obrigatória' 
+        ];
+
+        $request->validate($regras, $feedback);
+
+        print_r($request->all());
+
         return;
     }
 }

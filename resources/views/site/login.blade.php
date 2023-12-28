@@ -11,12 +11,12 @@
         <div style="width: 30%; margin-right: auto; margin-left: auto;">
             <form action="login" method="POST">
                 @csrf
-                <input type="text" name="user" placeholder="Usuário" class="borda-preta">
-                @if ($errors->has('user'))
-                    {{ $errors->first('user')}}
+                <input type="text" name="email" value="{{ old('email') }}" placeholder="Email do usuário" class="borda-preta">
+                @if ($errors->has('email'))
+                    {{ $errors->first('email')}}
                 @endif
                 <br>
-                <input type="password" name="senha" placeholder="Senha" class="borda-preta">
+                <input type="password" name="senha" value="{{ old('senha') }}" placeholder="Senha" class="borda-preta">
                 @if ($errors->has('senha'))
                     {{ $errors->first('senha')}}
                 @endif
