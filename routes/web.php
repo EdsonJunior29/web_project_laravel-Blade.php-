@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\SobreNosController;
 use App\Http\Middleware\LogAcessMiddleware;
@@ -24,7 +25,8 @@ Route::post('/',[PrincipalController::class , 'index']);
 Route::get('/sobre-nos',[SobreNosController::class, 'index' ]);
 Route::get('/contato',[ContatoController::class, 'index']);
 Route::post('/contato',[ContatoController::class, 'store']);
-Route::get('/login', function(){return 'login';});
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'store']);
 
 Route::middleware('autenticacao:padrão')->prefix('/app')->group( function (){
     Route::get('/clientes',function(){return 'clientes';});
