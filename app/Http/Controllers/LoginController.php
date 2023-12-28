@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -25,8 +26,17 @@ class LoginController extends Controller
 
         $request->validate($regras, $feedback);
 
-        print_r($request->all());
+        $email = $request->get('email');
+        $password = $request->get('senha');
 
-        return;
+        $user = new User();
+
+        $validateUser = $user->where('email', $email)->where('password', $password)->get()->first();
+
+        if(isset($validateUser->name) && isset($validateUser->email)){
+            return view('site.principal');
+        }
+        
+        return view('site.login');
     }
 }
