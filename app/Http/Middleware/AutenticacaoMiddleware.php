@@ -14,15 +14,13 @@ class AutenticacaoMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, string $metodo_atenticacao)
+    public function handle(Request $request, Closure $next)
     {
-        //verifica se o usuário logado tem acesso a essa rota
-        echo($metodo_atenticacao);
-        if(false){
-           
+        session_start();
+        if(isset($_SESSION['email']) && $_SESSION['email'] != ''){
             return $next($request);
         }
         
-        return Response('Acesso negado......');
+        return redirect('fallback');
     }
 }

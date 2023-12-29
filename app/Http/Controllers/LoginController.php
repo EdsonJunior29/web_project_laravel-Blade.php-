@@ -34,7 +34,12 @@ class LoginController extends Controller
         $validateUser = $user->where('email', $email)->where('password', $password)->get()->first();
 
         if(isset($validateUser->name) && isset($validateUser->email)){
-            return view('site.principal');
+           
+            session_start();
+            $_SESSION['name'] =  $validateUser->name;
+            $_SESSION['email'] =  $validateUser->email;
+            
+            return view('app.cliente.index');
         }
         
         return view('site.login');
