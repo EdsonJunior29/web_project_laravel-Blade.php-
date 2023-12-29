@@ -8,6 +8,6 @@ class ProdutoController extends Controller
 {
     public function index()
     {
-        return true;
+        return view('app.produto.index');
     }
 }

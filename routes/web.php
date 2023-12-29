@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PrincipalController;
 use App\Http\Controllers\ProdutoController;
@@ -31,9 +32,11 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::middleware('autenticacao')->prefix('/app')->group( function (){
+    Route::get('/home',[HomeController::class, 'index']);
     Route::get('/clientes',[ClienteController::class, 'index']);
     Route::get('/fornecedores',[FornecedorController::class, 'index']);
     Route::get('/produtos',[ProdutoController::class, 'index']);
+    Route::get('/sair',[LoginController::class, 'logout']);
 });
 
 Route::fallback(function(){

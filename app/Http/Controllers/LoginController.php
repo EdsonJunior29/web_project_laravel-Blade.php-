@@ -44,4 +44,9 @@ class LoginController extends Controller
         
         return view('site.login');
     }
+
+    public function logout()
+    {
+
+    }
 }
