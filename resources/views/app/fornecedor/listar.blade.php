@@ -10,7 +10,7 @@
     </div>
     <div class="menu">
         <ul>
-            <li><a href="fornecedores/adicionar">Novo</a></li>
+            <li><a href="fornecedores/teladecadastro">Novo</a></li>
             <li><a href="/app/fornecedores">Consulta</a></li>
         </ul>
     </div>

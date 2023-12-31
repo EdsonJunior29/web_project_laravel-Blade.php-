@@ -10,13 +10,13 @@
     </div>
     <div class="menu">
         <ul>
-            <li><a href="fornecedores/adicionar">Novo</a></li>
+            <li><a href="fornecedores/teladecadastro">Novo</a></li>
             <li><a href="/app/fornecedores">Consulta</a></li>
         </ul>
     </div>
     <div class="infomacao-pagina">
         <div style="width: 30%; margin-left: auto; margin-right: auto;">
-            <form action="" method="post">
+            <form action="cadastrar" method="POST">
                 @csrf
                 <input type="text" name="name" placeholder="Nome" class="borda-preta">
                 <input type="text" name="site" placeholder="site" class="borda-preta">
