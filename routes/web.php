@@ -34,7 +34,11 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::middleware('autenticacao')->prefix('/app')->group( function (){
     Route::get('/home',[HomeController::class, 'index']);
     Route::get('/clientes',[ClienteController::class, 'index']);
+
     Route::get('/fornecedores',[FornecedorController::class, 'index']);
+    Route::get('/fornecedores/adicionar',[FornecedorController::class, 'store']);
+    Route::post('/fornecedores/listar',[FornecedorController::class, 'list']);
+    
     Route::get('/produtos',[ProdutoController::class, 'index']);
     Route::get('/sair',[LoginController::class, 'logout']);
 });
