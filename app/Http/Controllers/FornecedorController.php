@@ -20,6 +20,7 @@ class FornecedorController extends Controller
             ->where('uf', 'like', '%'.$request->uf.'%')
             ->paginate(2);
         
+            dd($fornecedores->total());
         return view('app.fornecedor.listar', ['fornecedores' =>  $fornecedores, 'request' => $request->all()]);
     }
 
