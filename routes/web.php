@@ -38,6 +38,7 @@ Route::middleware('autenticacao')->prefix('/app')->group( function (){
     Route::get('/fornecedores',[FornecedorController::class, 'index']);
     Route::get('/fornecedores/teladecadastro',[FornecedorController::class, 'suppliers']);
     Route::post('/fornecedores/listar',[FornecedorController::class, 'list']);
+    Route::get('/fornecedores/listar',[FornecedorController::class, 'list']);
     Route::get('/fornecedores/editar/{id}',[FornecedorController::class, 'edit'])->name('app.fornecedor.editar');
     Route::get('/fornecedores/delete/{id}',[FornecedorController::class, 'delete'])->name('app.fornecedor.delete');
     Route::post('/fornecedores/cadastrar',[FornecedorController::class, 'store']);
